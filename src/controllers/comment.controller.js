@@ -52,6 +52,11 @@ const getVideoComments = asyncHandler(async (req, res) => {
         },
         {
             $limit: limit
+        },
+        {
+            $project: {
+                videoid: 1
+            }
         }
 
     ]);
